@@ -84,7 +84,7 @@ NS_INLINE MPGraphValuesRange MPGetBiggestRange(MPGraphValuesRange r1,MPGraphValu
 + (id)plotWithType:(MPPlotType)type frame:(CGRect)frame;
 + (MPGraphValuesRange)rangeForValues:(NSArray *)values;
 
-
+@property (nonatomic, assign) CGFloat contentWidth;
 @property (nonatomic,copy) NSArray *values; // array of NSNumber or NSString
 @property (nonatomic,retain) UIColor *graphColor; // color of the line
 @property (nonatomic,assign) CGFloat lineWidth;

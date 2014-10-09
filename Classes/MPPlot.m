@@ -56,6 +56,7 @@
     if (self) {
         self.valueRanges=MPMakeGraphValuesRange(CGFLOAT_MIN, CGFLOAT_MAX);
         NSAssert(![self isMemberOfClass:[MPPlot class]], @"You shouldn't init MPPlot directly, use the class method plotWithType:frame:");
+        self.contentWidth = frame.size.width;
     }
     
     return self;
@@ -73,13 +74,20 @@
     return self;
 }
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    self.contentWidth = self.bounds.size.width;
+}
+
 + (id)plotWithType:(MPPlotType)type frame:(CGRect)frame{
- 
+    
     switch (type) {
         case MPPlotTypeGraph:
             return [[MPGraphView alloc] initWithFrame:frame];
             break;
-
+            
         case MPPlotTypeBars:
             return [[MPBarsGraphView alloc] initWithFrame:frame];
             break;
@@ -99,7 +107,7 @@
         [self.detailView removeFromSuperview];
         currentTag=-1;
     }
-
+    
     
 }
 
@@ -257,11 +265,11 @@
             
             if(currentTag>=0)
                 [self displayDetailViewAtPoint:button.center];
-
+            
         }];
         
     }else [self displayDetailViewAtPoint:button.center];
- 
+    
 }
 
 - (void)displayDetailViewAtPoint:(CGPoint)point{
@@ -280,7 +288,7 @@
         self.detailView.transform=CGAffineTransformMakeScale(1, 1);
     }];
     
-
+    
 }
 
 
@@ -301,7 +309,7 @@
     label.clipsToBounds=YES;
     
     self.detailView=(UILabel <MPDetailView> *)label;
-
+    
     return _detailView;
 }
 

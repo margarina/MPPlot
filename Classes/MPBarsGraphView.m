@@ -73,7 +73,7 @@
         UIBezierPath *line=[UIBezierPath bezierPath];
         
         [line moveToPoint:CGPointMake(PADDING, self.height-self.barBottomViewHeight-self.barBottomViewPadding)];
-        [line addLineToPoint:CGPointMake(self.width-PADDING, self.height-self.barBottomViewHeight-self.barBottomViewPadding)];
+        [line addLineToPoint:CGPointMake(self.contentWidth-PADDING, self.height-self.barBottomViewHeight-self.barBottomViewPadding)];
         [line setLineWidth:1];
         [line stroke];
     }
@@ -97,8 +97,8 @@
         self.layer.masksToBounds=YES;
     }
     
-    CGFloat barWidthDefault=self.width/(points.count*2+1);
-    CGFloat barWidthFullPadding = ((self.width-self.maxBarPadding)/(points.count))-self.maxBarPadding;
+    CGFloat barWidthDefault=self.contentWidth/(points.count*2+1);
+    CGFloat barWidthFullPadding = ((self.contentWidth-self.maxBarPadding)/(points.count))-self.maxBarPadding;
     CGFloat desiredBarWidth=MAX(barWidthFullPadding, barWidthDefault);
     
     CGFloat barWidth = MIN(desiredBarWidth, self.maxBarWidth);
