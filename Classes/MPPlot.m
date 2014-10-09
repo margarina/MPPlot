@@ -228,7 +228,8 @@
         }];
     }
     
-    return view;
+    // Pass touches on self through, but not on subviews (allows plots below this one to have tappable points).
+    return (view == self) ? nil : view;
 }
 
 - (void)animate{

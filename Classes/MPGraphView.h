@@ -15,6 +15,8 @@
     CAGradientLayer *gradient;
 }
 
+@property (nonatomic, assign) CGRect buttonBounds;
+@property (nonatomic, assign) NSInteger maxNumberOfButtons;
 @property (nonatomic,assign) BOOL curved;
 @property (nonatomic,retain) NSArray *fillColors; // array of colors or CGColor
 
