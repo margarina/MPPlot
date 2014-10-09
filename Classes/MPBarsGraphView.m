@@ -47,7 +47,6 @@
     self.maxBarWidth = 30.0;
     self.maxBarPadding = 30.0;
     self.barBottomViewHeight = 30.0;
-    self.barBottomViewCornerRadius = 15.0;
     self.barBottomViewPadding = 10.0;
 }
 
@@ -143,8 +142,8 @@
         if (self.additionalBarBottomViews.count > i)
         {
             UIView *additionalView = self.additionalBarBottomViews[i];
-            additionalView.frame = CGRectMake(0.0, self.barBottomViewPadding, self.barBottomViewHeight, self.barBottomViewHeight);
-            additionalView.layer.cornerRadius = self.barBottomViewCornerRadius;
+            additionalView.frame = CGRectMake(0.0, self.barBottomViewPadding, barWidth, barWidth);
+            additionalView.layer.cornerRadius = barWidth/2;
             additionalView.clipsToBounds = YES;
             [barBottomView addSubview:additionalView];
             

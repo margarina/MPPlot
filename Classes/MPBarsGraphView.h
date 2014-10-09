@@ -17,7 +17,6 @@
 @property (nonatomic, assign) CGFloat maxBarWidth;
 @property (nonatomic, assign) CGFloat maxBarPadding;
 @property (nonatomic, assign) CGFloat barBottomViewHeight;
-@property (nonatomic, assign) CGFloat barBottomViewCornerRadius;
 @property (nonatomic, assign) CGFloat barBottomViewPadding;
 @property (nonatomic, strong) NSArray *additionalBarBottomViews;
 
